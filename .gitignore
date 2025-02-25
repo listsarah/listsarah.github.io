@@ -173,4 +173,4 @@ cython_debug/
 
 .vscode/
 
-pipw.db
+portfolio.db
