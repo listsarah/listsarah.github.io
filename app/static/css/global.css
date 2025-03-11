@@ -11,11 +11,11 @@
 }
 
 .header{
-    height: 20vh;
+    height: max-content;
 }
 
 .main_content{
-    height: 80vh;
+    height: auto;
     overflow-y: scroll;
     overflow-x: hidden;
 }
