@@ -1,0 +1,13 @@
+<header>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/name_page.css') }}">
+</header>
+<body>
+    <div id = "name_page_container" class = "name_page_container">
+        <div class="text_container">
+            <div class="name">SARAH LISTZWAN</div>
+            <div class="description" id="description">ROBOTICS ENGINEER</div>
+        </div>
+        <img src="{{ url_for('static', filename='img/head_shot.jpg') }}" class = "head_shot_img">
+    </div>
+    <script src="{{ url_for('static', filename='js/name_page.js') }}" defer></script>
+</body>
