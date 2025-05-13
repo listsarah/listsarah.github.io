@@ -1,4 +1,4 @@
-const descriptions = ["MECHANICAL ENGINEER", "MAKER", "ROBOTICS ENGINEER"];
+const descriptions = ["MECHANICAL ENGINEER", "MAKER", "ROBOTICS ENGINEER", "PHOTOGRAPHER"];
 let index = 0;
 let charIndex = 0;
 let isDeleting = false;
