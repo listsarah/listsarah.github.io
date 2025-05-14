@@ -1,0 +1,30 @@
+html{
+    font-family: "Oswald";
+}
+
+body{
+    margin: 0;
+}
+
+.header_container{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--black);
+}
+
+.header_items{
+    color: var(--white);
+    padding: 10px;
+    font-size: 3vh;
+    cursor: pointer;
+}
+
+.header_items:hover{
+    font-weight: 500;
+}
+
+.logo_img{
+    height: 4.5vh;
+    margin: auto auto auto 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+:root {
+    --black: #020300;
+    --white: #F5EFED;
+}
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.header{
+    height: max-content;
+}
+
+.main_content{
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+

@@ -1,0 +1,30 @@
+.name_page_container{
+    background-color: var(--black);
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.text_container{
+    color: var(--white);
+    margin: auto auto auto 20px;
+    transform: translate(0, -10%);
+}
+
+.name{
+    font-size: 150;
+    font-weight: bold;
+    line-height: 1.12;
+}
+
+.description{
+    font-size: 50;
+}
+
+.head_shot_img{
+    height: 100vh;
+    margin: auto 0 0 auto;
+    transform: translate(10%, 0);
+}
+
+
