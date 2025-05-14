@@ -14,6 +14,8 @@ class Catagory(db.Model):
         return "<Cataory: #{} {}>".format(self.id,self.name)
     def get_name(self):
         return self.name
+    def export(self):
+        return {"name":self.name}
     
 class Skill(db.Model):
     #fields
@@ -26,6 +28,8 @@ class Skill(db.Model):
         return "<Skill: #{} {}>".format(self.id,self.name)
     def get_name(self):
         return self.name
+    def export(self):
+        return {"name":self.name}
 
 
 class Project(db.Model):
@@ -42,4 +46,5 @@ class Project(db.Model):
         return self.title
     def get_description(self):
         return self.description
-    
+    def export(self):
+        return {"title":self.title, "description": self.description}

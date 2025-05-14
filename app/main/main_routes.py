@@ -11,4 +11,7 @@ def index():
 @bp_main.route('/projects/retreive', methods=['GET'])
 def get_projects():
     projects = db.session.scalars(sqla.select(Project))
-    return # make projects as json
+    projects_json = []
+    for project in projects:
+        projects_json.append(project.export())
+    return {"projects": projects_json}
