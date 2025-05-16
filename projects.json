@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Turtlebot SLAM",
+        "description": "Simultaneous Localization and Mapping Implementation on a Turtlebot. Robot explores, maps, and navigates a static, unknown maze. A* Path Planning was implemented to improve navigational efficiency.",
+        "skills" : ["Programming", "Robotics", "Algorithms"],
+        "images" : []
+    },
+    {
+        "title": "7-bit Computer",
+        "description": "A 7-Bit von Nuemann style computer created almost entirely from logic gates. It is based on the Simple as Possible Computer, and is greatly inspired by Ben Eaters Breadboard Computer. It is assembled on a solderable protoboard.",
+        "skills" : ["Electrical"],
+        "images" : []
+    },
+    {
+        "title": "PIP",
+        "description": "A web application designed to allow WPI students to plan their schedules and view course reports for relevant courses. It also optimizes the students schedule based on the factors chosen by the student.",
+        "skills" : ["Web Development", "Programming"],
+        "images" : []
+    },
+    {
+        "title": "Turned Pens",
+        "description": "Aluminum and Brass Pens turned on a manual lathe. Designed to accommodate Pilot G2 ink cartridges.",
+        "skills" : ["Manufacturing", "Machining"],
+        "images" : []
+    },
+    {
+        "title": "Chess Bot",
+        "description": "A Chess bot programmed in C++ with a UCI interface to allow for integration into common chess GUIs. Uses the Minmax algorithm with ",
+        "skills" : ["Programming", "Algorithms"],
+        "images" : []
+    }
+]

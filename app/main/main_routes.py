@@ -1,5 +1,6 @@
 from flask import render_template
 from app.main import main_blueprint as bp_main
+import json
 
 @bp_main.route('/', methods=['GET'])
 def index():
@@ -7,8 +8,8 @@ def index():
 
 @bp_main.route('/projects/retreive', methods=['GET'])
 def get_projects():
-    projects = [] # read json here
-    projects_json = []
-    for project in projects:
-        projects_json.append(project.export())
-    return {"projects": projects_json}
+
+    with open('projects.json') as f:
+        d = json.load(f)
+    projects = d
+    return {"projects": projects}
