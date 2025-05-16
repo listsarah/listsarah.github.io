@@ -16,18 +16,32 @@ function add_project(project){
     const main_box = document.createElement("div");
     main_box.classList = "main_box"
 
+    const title_box = document.createElement("div")
+    title_box.classList = "title_box"
+
     const title = document.createElement("div");
     title.classList = "project_title"
-    title.innerText = project["title"]
+    title.innerText = project["title"].toUpperCase();
 
-    main_box.appendChild(title)
+    const line = document.createElement("hr")
+    line.classList = "project_line"
+
+    title_box.appendChild(title)
+    title_box.appendChild(line)
+
+    main_box.appendChild(title_box)
+
+    const skill_box = document.createElement("div");
+    skill_box.classList = "skill_box"
     
     project["skills"].forEach(skill => {
         const skill_div = document.createElement("div");
         skill_div.classList = "skill"
         skill_div.innerText = skill
-        main_box.appendChild(skill_div)
+        skill_box.appendChild(skill_div)
     })
+
+    main_box.appendChild(skill_box)
 
     const description = document.createElement("div");
     description.classList = "project_description"
