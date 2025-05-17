@@ -3,7 +3,13 @@
         "title": "Turtlebot SLAM",
         "description": "Simultaneous Localization and Mapping Implementation on a Turtlebot. Robot explores, maps, and navigates a static, unknown maze. A* Path Planning was implemented to improve navigational efficiency.",
         "skills" : ["Programming", "Robotics", "Algorithms"],
-        "images" : []
+        "what_it_does":"This project was completed for RBE 3002 a junior-level Robotics Engineering undergraduate course at Worcester Polytechnic Institute. I worked with a team to implement simultaneous localization and mapping (SLAM) using ROS on a TurtleBot to allow it to explore and navigate an unknown maze.",
+        "technical_details": "This project consisted of two phases. The first phase involves the mapping of the unknown maze. The robot is first placed in a random location in the maze. The TurtleBot then navigates the maze until all unknown frontiers are explored. The frontiers are prioritized by location, size, and density. The GMapping package is used during this phase as it implements a particle filter to allow for localization and construction of the map using the LIDAR. \n\n Once the map of the maze is constructed, the second phase commences. The robot is 'kidnapped' and moved to a random location in the map. The robot then localizes itself and then drives to the location specified on the map. The AMCL packages was used for localization using a particle filter. \n\n Through this process, a wall avoidance A* algorithm is used for path planning. An e-stop was implemented on the robot level to ensure the robot does not run into any unforeseen walls. A pure pursuit drive controller was implemented to improve efficiency.",
+        "media_links" : ["/static/project_media/astar.png"],
+        "media_descriptions" : ["Wall Avoidant A* (left) vs. Shortest Path A* (right)"],
+        "completion_date": "December 2024",
+        "collaborators": ["Zachary Serocki", "Alexander Kraemling", "Benjamin Penti"],
+        "paper_link" : "/static/project_media/RBE_3002_Final.pdf"
     },
     {
         "title": "7-bit Computer",

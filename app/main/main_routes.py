@@ -19,10 +19,18 @@ def project_details(name):
         d = json.load(f)
     projects = d
     for project in projects:
-        print(name_snake_case(project["title"]))
-        if name_snake_case(project["title"]) == name: return {"project": project}
+        if name_snake_case(project["title"]) == name: return render_template("__project.html")
     return {500: "project not found"}
 
+@bp_main.route("/projects/<name>/retrieve")
+def get_project_details(name):
+    with open('projects.json') as f:
+        d = json.load(f)
+    projects = d
+    for project in projects:
+        if name_snake_case(project["title"]) == name: return {"project": project}
+    return {500: "project not found"}
+    
 
 def name_snake_case(name):
     words = name.split(" ")
