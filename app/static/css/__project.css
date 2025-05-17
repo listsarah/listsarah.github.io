@@ -69,3 +69,54 @@ img{
     text-align: center;
     font-style: italic;
 }
+
+.navigate_btn{
+    margin: auto 10 auto 10;
+    padding: 10px;
+    font-size: xx-large;
+    transform: scale(2,3);
+    font-weight: lighter;
+}
+
+@keyframes jumpInfinite {
+    0% {
+        margin: auto 10 auto 10;
+    }
+    50% {
+        margin: auto 5 auto 15;
+    }
+    100% {
+        margin: auto 10 auto 10;
+    }
+  }
+
+
+.navigate_btn:hover{
+    animation: jumpInfinite  1.5s infinite;
+    cursor: pointer;
+}
+
+.media_slide_container {
+    width: 100%;
+    max-width: 100%;
+}
+
+.image_container {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.image_container img,
+.image_container video {
+    max-width: 90%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}

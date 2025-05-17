@@ -1,5 +1,5 @@
 project_data = ""
-picture_index = 0
+picture_index = 1
 
 async function get_project(){
     const url = window.location.href + "/retrieve";
@@ -29,6 +29,54 @@ function update_text(){
 
     update_media()
 
+}
+
+function update_media(){
+    project_details = document.getElementById("project_details")
+
+    project_details.innerHTML = ""
+
+    media_slide_container = document.createElement("div")
+    media_slide_container.classList = "media_slide_container"
+    media_slide_container.id = "media_slide_container"
+
+    image_container = document.createElement("div")
+    image_container.classList = "image_container"
+    image_container.id = "image_container"
+    if(project_data["media_links"][picture_index].includes(".mp4")){
+        curr_img = document.createElement("video")
+        curr_img.setAttribute("controls","controls")
+        curr_img.innerHTML = "<source src='" + project_data["media_links"][picture_index] +  "' type='video/mp4'>"
+    } else {
+        curr_img = document.createElement("img")
+        curr_img.src = project_data["media_links"][picture_index]
+    }
+
+    image_container.appendChild(curr_img)
+
+    if(project_data["media_links"].length>1){
+        navigate_btn = document.createElement("div")
+        navigate_btn.classList = "navigate_btn"
+        navigate_btn.id = "navigate_btn"
+        navigate_btn.innerText = ">>"
+        navigate_btn.addEventListener("click", () => {
+            picture_index += 1
+            if(picture_index >= project_data["media_links"].length) picture_index = 0;
+            update_media()
+        })
+        image_container.appendChild(navigate_btn)
+    }
+
+    media_slide_container.appendChild(image_container)
+
+    img_description = document.createElement("div")
+    img_description.classList = "img_description"
+    img_description.innerText = project_data["media_descriptions"][picture_index]
+
+    media_slide_container.appendChild(img_description)
+
+    project_details.appendChild(media_slide_container)
+
     if(project_data["collaborators"]){
         collaborators_container = document.createElement("div")
         collaborators_container.classList = "collaborators_container"
@@ -42,7 +90,7 @@ function update_text(){
         project_data["collaborators"].forEach(person_name => {
             person = document.createElement("div")
             person.classList = "person"
-            person.innerText = person_name
+            person.innerText = person_name.toUpperCase()
             collaborators_container.appendChild(person)
         });
         project_details.appendChild(collaborators_container)
@@ -86,28 +134,6 @@ function update_text(){
 
         project_details.appendChild(code_link_container)
     }
-
-}
-
-function update_media(){
-    project_details = document.getElementById("project_details")
-
-    media_slide_container = document.createElement("div")
-    media_slide_container.classList = "media_slide_container"
-    media_slide_container.id = "media_slide_container"
-
-    curr_img = document.createElement("img")
-    curr_img.src = project_data["media_links"][picture_index]
-
-    media_slide_container.appendChild(curr_img)
-
-    img_description = document.createElement("div")
-    img_description.classList = "img_description"
-    img_description.innerText = project_data["media_descriptions"][picture_index]
-
-    media_slide_container.appendChild(img_description)
-
-    project_details.appendChild(media_slide_container)
 }
 
 document.addEventListener("DOMContentLoaded", get_project)

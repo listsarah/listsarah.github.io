@@ -5,8 +5,8 @@
         "skills" : ["Programming", "Robotics", "Algorithms"],
         "what_it_does":"This project was completed for RBE 3002 a junior-level Robotics Engineering undergraduate course at Worcester Polytechnic Institute. I worked with a team to implement simultaneous localization and mapping (SLAM) using ROS on a TurtleBot to allow it to explore and navigate an unknown maze.",
         "technical_details": "This project consisted of two phases. The first phase involves the mapping of the unknown maze. The robot is first placed in a random location in the maze. The TurtleBot then navigates the maze until all unknown frontiers are explored. The frontiers are prioritized by location, size, and density. The GMapping package is used during this phase as it implements a particle filter to allow for localization and construction of the map using the LIDAR. \n\n Once the map of the maze is constructed, the second phase commences. The robot is 'kidnapped' and moved to a random location in the map. The robot then localizes itself and then drives to the location specified on the map. The AMCL packages was used for localization using a particle filter. \n\n Through this process, a wall avoidance A* algorithm is used for path planning. An e-stop was implemented on the robot level to ensure the robot does not run into any unforeseen walls. A pure pursuit drive controller was implemented to improve efficiency.",
-        "media_links" : ["/static/project_media/astar.png"],
-        "media_descriptions" : ["Wall Avoidant A* (left) vs. Shortest Path A* (right)"],
+        "media_links" : ["/static/project_media/astar.png", "/static/project_media/RoboticArm.mp4"],
+        "media_descriptions" : ["Wall Avoidant A* (left) vs. Shortest Path A* (right)", "Video"],
         "completion_date": "December 2024",
         "collaborators": ["Zachary Serocki", "Alexander Kraemling", "Benjamin Penti"],
         "paper_link" : "/static/project_media/RBE_3002_Final.pdf"
@@ -15,24 +15,42 @@
         "title": "7-bit Computer",
         "description": "A 7-Bit von Nuemann style computer created almost entirely from logic gates. It is based on the Simple as Possible Computer, and is greatly inspired by Ben Eaters Breadboard Computer. It is assembled on a solderable protoboard.",
         "skills" : ["Electrical"],
-        "images" : []
+        "what_it_does": "",
+        "technical_details": "",
+        "media_links" : [],
+        "media_descriptions" : [],
+        "completion_date": "May 2025"
     },
     {
         "title": "PIP",
         "description": "A web application designed to allow WPI students to plan their schedules and view course reports for relevant courses. It also optimizes the students schedule based on the factors chosen by the student.",
         "skills" : ["Web Development", "Programming"],
-        "images" : []
+        "what_it_does": "",
+        "technical_details": "",
+        "media_links" : [],
+        "media_descriptions" : [],
+        "completion_date": "April 2025",
+        "collaborators": ["Zachary Serocki", "Dylan Schmit", "Nikhil Gangaram"]
     },
     {
         "title": "Turned Pens",
         "description": "Aluminum and Brass Pens turned on a manual lathe. Designed to accommodate Pilot G2 ink cartridges.",
         "skills" : ["Manufacturing", "Machining"],
-        "images" : []
+        "what_it_does": "",
+        "technical_details": "",
+        "media_links" : [],
+        "media_descriptions" : [],
+        "completion_date": "May 2025"
     },
     {
         "title": "Chess Bot",
         "description": "A Chess bot programmed in C++ with a UCI interface to allow for integration into common chess GUIs. Uses the Minmax algorithm with ",
         "skills" : ["Programming", "Algorithms"],
-        "images" : []
+        "what_it_does": "",
+        "technical_details": "",
+        "media_links" : [],
+        "media_descriptions" : [],
+        "completion_date": "January 2025",
+        "code_link": "https://github.com/listsarah/TheChessEngine"
     }
 ]
