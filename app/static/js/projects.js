@@ -60,6 +60,15 @@ function remove_all_projects(){
     all_projects.innerHTML = ""
 }
 
+function project_snake_case(title){
+    title = title.split(" ")
+    snake_case_title = ""
+    title.forEach(word => {
+        snake_case_title += "_" + word.toLowerCase()
+    })
+    return snake_case_title.substring(1);
+}
+
 function add_project(project){
     const all_projects = document.getElementById("all_projects");
     const main_box = document.createElement("div");
@@ -97,7 +106,28 @@ function add_project(project){
     description.innerText = project["description"]
 
     main_box.appendChild(description)
-    
+
+    const learn_more_container = document.createElement("div")
+    learn_more_container.classList = "learn_more_container"
+
+    const learn_more_text = document.createElement("div")
+    learn_more_text.classList = "learn_more_text"
+    learn_more_text.innerText = "LEARN MORE"
+
+    const learn_more_arrows = document.createElement("div")
+    learn_more_arrows.classList = "learn_more_arrows"
+    learn_more_arrows.innerText = ">>"
+
+    learn_more_arrows.addEventListener("click", () => {
+        console.log("/projects/" + project_snake_case(project["title"]))
+        window.location.href = "/projects/" + project_snake_case(project["title"])
+    })
+
+    learn_more_container.appendChild(learn_more_text)
+    learn_more_container.appendChild(learn_more_arrows)
+
+    main_box.appendChild(learn_more_container)
+
     all_projects.appendChild(main_box)
 }
 

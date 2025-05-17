@@ -8,8 +8,25 @@ def index():
 
 @bp_main.route('/projects/retreive', methods=['GET'])
 def get_projects():
-
     with open('projects.json') as f:
         d = json.load(f)
     projects = d
     return {"projects": projects}
+
+@bp_main.route("/projects/<name>")
+def project_details(name):
+    with open('projects.json') as f:
+        d = json.load(f)
+    projects = d
+    for project in projects:
+        print(name_snake_case(project["title"]))
+        if name_snake_case(project["title"]) == name: return {"project": project}
+    return {500: "project not found"}
+
+
+def name_snake_case(name):
+    words = name.split(" ")
+    snake_case = ""
+    for word in words:
+        snake_case += "_" + word.lower()
+    return snake_case[1:]

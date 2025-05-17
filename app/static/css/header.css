@@ -17,6 +17,7 @@ body{
     padding: 10px;
     font-size: 3vh;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .header_items:hover{
