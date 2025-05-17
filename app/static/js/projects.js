@@ -1,3 +1,5 @@
+project_data = ""
+
 async function get_projects(){
     const url = `/projects/retreive`;
     const response = await fetch(url);
@@ -6,9 +8,36 @@ async function get_projects(){
     }
     const json = await response.json();
     projects = json["projects"]
+    project_data = projects
     projects.forEach(project => {
         add_project(project)
     })
+}
+
+async function add_filters(){
+    if(project_data === ""){
+        await get_projects()
+    }
+    filters = []
+    project_data.forEach(project => {
+        project["skills"].forEach(skill=>{
+            if(!filters.includes(skill)) filters.push(skill)
+        })
+    })
+    filters.sort();
+    filters_container = document.getElementById("filter_container")
+    filters_dropdown_items = document.createElement("div");
+    filters_dropdown_items.id = "filters_dropdown_items"
+    filters_dropdown_items.classList = "filters_dropdown_items"
+
+    filters.forEach(filter => {
+        const filter_item = document.createElement("div")
+        filter_item.classList = "filter_item"
+        filter_item.id = filter
+        filter_item.innerText = filter.toUpperCase()
+        filters_dropdown_items.appendChild(filter_item)
+    })
+    filters_container.appendChild(filters_dropdown_items)
 }
 
 function add_project(project){
@@ -52,4 +81,4 @@ function add_project(project){
     all_projects.appendChild(main_box)
 }
 
-document.addEventListener("DOMContentLoaded", get_projects)
+document.addEventListener("DOMContentLoaded", add_filters)

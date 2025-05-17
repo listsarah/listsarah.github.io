@@ -33,13 +33,6 @@
     padding: 0px 20px 0px 20px;
 }
 
-.filter{
-    border: 2px solid var(--white);
-    padding: 0 5px 0 5px;
-    margin: 5px;
-    display: flex;
-}
-
 .project_title{
     color: var(--white);
     font-size: xx-large;
@@ -75,7 +68,7 @@
 .all_projects{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 10px;
     padding: 0 20px 0 20px;
 }
 
@@ -83,6 +76,7 @@
     display: flex;
     width: 100%;
     flex-direction: row;
+    padding-bottom: 5px;
 }
 
 .project_line{
@@ -90,4 +84,24 @@
     margin: auto 5px auto 5px;
     border: 1.5px solid var(--white);
     flex: 1;
+}
+
+.filter_container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid var(--white);
+    padding: 0 5px 0 5px;
+    margin: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.skill_dropdown{
+    transform: scale(1.5,0.5);
+    padding-right: 1px;
+}
+
+.filters_dropdown_items{
+    position: absolute;
 }
