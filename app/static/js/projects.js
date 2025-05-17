@@ -21,7 +21,7 @@ async function add_filters(){
     filters = []
     project_data.forEach(project => {
         project["skills"].forEach(skill=>{
-            if(!filters.includes(skill)) filters.push(skill)
+            if(!filters.includes(skill.toUpperCase())) filters.push(skill.toUpperCase())
         })
     })
     filters.sort();
@@ -36,8 +36,28 @@ async function add_filters(){
         filter_item.id = filter
         filter_item.innerText = filter.toUpperCase()
         filters_dropdown_items.appendChild(filter_item)
+        filter_item.addEventListener("click", () => add_filter(filter_item))
     })
     filters_container.appendChild(filters_dropdown_items)
+}
+
+function refresh_projects(){
+    filters = get_active_filters()
+    remove_all_projects()
+    project_data.forEach(project => {
+        if(filters.length !== 0){
+            project["skills"].forEach(skill => {
+                if(filters.includes(skill.toUpperCase())){
+                    add_project(project)
+                }
+            })
+        } else add_project(project)
+    });
+}
+
+function remove_all_projects(){
+    const all_projects = document.getElementById("all_projects");
+    all_projects.innerHTML = ""
 }
 
 function add_project(project){
@@ -66,7 +86,7 @@ function add_project(project){
     project["skills"].forEach(skill => {
         const skill_div = document.createElement("div");
         skill_div.classList = "skill"
-        skill_div.innerText = skill
+        skill_div.innerText = skill.toUpperCase()
         skill_box.appendChild(skill_div)
     })
 
@@ -81,4 +101,58 @@ function add_project(project){
     all_projects.appendChild(main_box)
 }
 
+function toggle_dropdown(visible){
+    dropdown_items = document.getElementById("filters_dropdown_items")
+    visible ? dropdown_items.style.visibility = "visible" : dropdown_items.style.visibility = "hidden" 
+}
+
+function add_filter(filter){
+    if(check_filter_existance(filter)) return
+
+    filters = document.getElementById("filters")
+    new_filter = document.createElement("div")
+    new_filter.id = filter.id + "_filter"
+    new_filter.classList = "skill_filters"
+
+    filter_name = document.createElement("div")
+    filter_name.innerText = filter.id
+
+    close_btn = document.createElement("div")
+    close_btn.innerText = 'X'
+    close_btn.classList = "close_btn"
+
+    close_btn.addEventListener("click", ()=>remove_filter(filter.id + "_filter"))
+
+    new_filter.appendChild(filter_name)
+    new_filter.appendChild(close_btn)
+
+    filters.appendChild(new_filter) 
+
+    refresh_projects()
+}
+
+function check_filter_existance(filter){
+    return (get_active_filters().includes(filter.innerText.split("\n")[0].toUpperCase())) ? true : false
+}
+
+function get_active_filters(){
+    filters = []
+    filter_divs = Array.from(document.getElementsByClassName("skill_filters"))
+    if(filter_divs.length != 0){
+        filter_divs.forEach(filter => {
+            filters.push(filter.innerText.split('\n')[0]);
+        })
+    }
+    return filters
+}
+
+function remove_filter(filter_name){
+    filter = document.getElementById(filter_name)
+    filter.remove()
+    refresh_projects()
+}
+
 document.addEventListener("DOMContentLoaded", add_filters)
+document.getElementById("filter_container").addEventListener("mouseover", () => toggle_dropdown(true))
+document.getElementById("filter_container").addEventListener("click", () => toggle_dropdown(false))
+document.addEventListener('click', function(event) {if (!document.getElementById("filter_container").contains(event.target)) {toggle_dropdown(false)}});

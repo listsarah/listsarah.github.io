@@ -26,6 +26,7 @@
 }
 
 .filters{
+    position: relative;
     display: flex;
     flex-direction: row;
     color: var(--white);
@@ -87,7 +88,6 @@
 }
 
 .filter_container{
-    position: relative;
     display: flex;
     flex-direction: row;
     border: 2px solid var(--white);
@@ -95,13 +95,47 @@
     margin: 5px;
     display: flex;
     gap: 5px;
+    min-width: 150px;
 }
 
 .skill_dropdown{
     transform: scale(1.5,0.5);
     padding-right: 1px;
+    margin: auto 0 auto auto;
 }
 
 .filters_dropdown_items{
     position: absolute;
+    visibility: hidden;
+}
+
+.filter_item{
+    color: var(--black);
+    background-color: var(--white);
+    transform: translate(-7px, 100%);
+    padding: 0 5px 0 5px;
+    min-width: 154px;
+}
+.filter_item:hover{
+    font-weight: 500;
+}
+
+.skill_filters{
+    margin: 5px;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    margin: auto 5px auto 5px;
+    border: 2px var(--white) solid;
+}
+
+.close_btn{
+    transform: scale(1.5,0.8);
+    padding: 0 3px 0 9px;
+}
+
+.close_btn:hover{
+    font-weight: 500;
 }
