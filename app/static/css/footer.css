@@ -1,0 +1,44 @@
+.footer_container{
+    background: var(--black);
+    display: flex;
+    flex-direction: row;
+    min-height: 10vh;
+    padding: 20px;
+}
+
+.contact_container{
+    color: var(--white);
+    border: 3px solid var(--white);
+    padding: 10px;
+    font-size: x-large;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 5px;
+}
+
+img{
+    height: 60%;
+    margin: auto;
+}
+
+.contact_text{
+    white-space: nowrap;
+}
+
+.name_contact {
+    white-space: nowrap;
+    color: var(--white);
+    margin: auto 10px auto auto;
+    font-size: x-large;
+}
+
+.year_contact{
+    white-space: nowrap;
+    color: var(--white);
+    margin: auto 20px auto 0;
+    font-size: x-large;
+}
+.contact_container a{
+    margin: auto;
+}

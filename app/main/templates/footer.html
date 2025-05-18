@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    </head>
+    <body>
+        <div class="footer_container">
+            <div class="contact_container">
+                <div class="contact_text">GET IN TOUCH</div>
+                <a href="https://github.com/listsarah"><img src="{{ url_for('static', filename='img/Github.svg') }}"></a>
+                <a href="https://linkedin.com/in/sarah-listzwan-7a4560265"><img src="{{ url_for('static', filename='img/Linkedin.svg') }}"></a>
+            </div>
+            <div class="name_contact">SARAH LISTZWAN</div>
+            <div class="year_contact" id="year_contact"></div>
+        </div>
+    </body>
+    <script src="{{ url_for('static', filename='js/footer.js') }}" defer></script>
+</html>
