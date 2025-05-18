@@ -1,9 +1,8 @@
 .about_container{
     background-color: var(--white);
-    flex: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
 }
 
 
@@ -26,14 +25,46 @@
 }
 
 .about_content{
-    border: 12px solid var(--black);
-    margin: 0 auto 0 20px;
+    background-color: var(--black);
+    color: var(--white);
+    margin: 0 0 20px 20px;
     width: 70%;
     padding: 20px;
-    font-size: 6.0vh;
+    font-size: xx-large;
+    height: fit-content;
 }
 
 .chevron{
+    width: 11vw;
+    background-color: var(--black);
+    height: 9vw;
     clip-path: polygon(50% 50%, 100% 0, 100% 50%, 52% 100%, 0 50%, 0% 0%);
-    fill: var(--black);
+}
+
+.side_by_side{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.chevrons{
+    margin: auto 5vw 5vh auto;
+}
+
+
+@keyframes jumpInfiniteChevrons {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+.chevrons:hover{
+    animation: jumpInfiniteChevrons  1.5s infinite;
 }
