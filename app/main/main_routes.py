@@ -30,7 +30,6 @@ def get_project_details(name):
     for project in projects:
         if name_snake_case(project["title"]) == name: return {"project": project}
     return {500: "project not found"}
-    
 
 def name_snake_case(name):
     words = name.split(" ")
