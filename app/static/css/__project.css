@@ -110,6 +110,8 @@ img{
     align-items: center;
     position: relative;
     overflow: hidden;
+    background: var(--black);
+    padding: 5px;
 }
 
 .image_container img,

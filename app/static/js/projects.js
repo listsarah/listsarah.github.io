@@ -8,10 +8,17 @@ async function get_projects(){
     }
     const json = await response.json();
     projects = json["projects"]
+    projects.sort((a, b) => -1*completion_date_to_decimal(a["completion_date"]) + completion_date_to_decimal(b["completion_date"]));
     project_data = projects
     projects.forEach(project => {
         add_project(project)
     })
+}
+
+function completion_date_to_decimal(date){
+    elements = date.split(" ")
+    months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    return months.indexOf(elements[0]) / 12 + parseFloat(elements[1])
 }
 
 async function add_filters(){

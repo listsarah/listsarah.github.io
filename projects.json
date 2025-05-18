@@ -12,16 +12,6 @@
         "paper_link" : "/static/project_media/RBE_3002_Final.pdf"
     },
     {
-        "title": "7-bit Computer",
-        "description": "A 7-Bit von Nuemann style computer created almost entirely from logic gates. It is based on the Simple as Possible Computer, and is greatly inspired by Ben Eaters Breadboard Computer. It is assembled on a solderable protoboard.",
-        "skills" : ["Electrical"],
-        "what_it_does": "",
-        "technical_details": "",
-        "media_links" : [],
-        "media_descriptions" : [],
-        "completion_date": "May 2025"
-    },
-    {
         "title": "PIP",
         "description": "A web application designed to allow WPI students to plan their schedules and view course reports for relevant courses. It also optimizes the students schedule based on the factors chosen by the student.",
         "skills" : ["Web Development", "Programming"],
@@ -30,7 +20,8 @@
         "media_links" : [],
         "media_descriptions" : [],
         "completion_date": "April 2025",
-        "collaborators": ["Zachary Serocki", "Dylan Schmit", "Nikhil Gangaram"]
+        "collaborators": ["Zachary Serocki", "Dylan Schmit", "Nikhil Gangaram"],
+        "paper_link" : "/static/project_media/pip.pdf"
     },
     {
         "title": "Turned Pens",
@@ -44,12 +35,12 @@
     },
     {
         "title": "Chess Bot",
-        "description": "A Chess bot programmed in C++ with a UCI interface to allow for integration into common chess GUIs. Uses the Minmax algorithm with ",
+        "description": "A Chess bot programmed in C++ with a UCI interface to allow for integration into common chess GUIs. Uses the Min-Max algorithm with a combination of heuristics and a fixed search depth to detemine the best next move.",
         "skills" : ["Programming", "Algorithms"],
-        "what_it_does": "",
-        "technical_details": "",
-        "media_links" : [],
-        "media_descriptions" : [],
+        "what_it_does": "This project is a Chess Bot that I created entirely in C++ to compete with the chessbots programmed by some friends. I added a Universal Chess Interface (UCI) to this bot to interface with various chess GUIs for a better user experience. It uses a Min-Max algorithm with a lookahead distance to determine the best move.",
+        "technical_details": "This chessbot uses a 64-bit integer to store the state of the board to improve speed and memory efficiency. Each piece type has its own 64-bit board to store the current state of that piece. \n \n To determine the legal moves available to the bot, the indices to which each of the pieces can move are programmed. Each of these indices are then checked to determine if they contain a legal move for the piece. Should the move be legal, it is added to a list of possible moves. Each of these moves are then completed, and the same is done for the other player. This is repeated to a set search depth. The score of each of the boards after the search depth is then computed as a combination of the weights due to the locations of each piece, as well as the pieces that are left on the board. The best move is then completed by the chess engine. \n \n To improve this chessbot I am planning on implementing alpha-beta pruning to increase the speed of the computation, as well as implementing an adaptive search depth to allow the chessbot to search farther into the future when there are fewer legal moves.",
+        "media_links" : ["/static/project_media/chess_engine.png"],
+        "media_descriptions" : ["Chess Engine (playing as white) opening game"],
         "completion_date": "January 2025",
         "code_link": "https://github.com/listsarah/TheChessEngine"
     }
