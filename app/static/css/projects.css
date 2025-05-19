@@ -32,6 +32,7 @@
     color: var(--white);
     font-size: larger;
     padding: 0px 20px 0px 20px;
+    flex-wrap: wrap;
 }
 
 .project_title{
@@ -108,6 +109,7 @@
 .filters_dropdown_items{
     position: absolute;
     visibility: hidden;
+    z-index: 10;
 }
 
 .filter_item{
@@ -128,7 +130,7 @@
     padding: 0px 10px 0px 10px;
     display: flex;
     flex-direction: row;
-    margin: auto 5px auto 5px;
+    margin: 5px;
     border: 2px var(--white) solid;
 }
 

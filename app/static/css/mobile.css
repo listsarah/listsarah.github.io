@@ -1,0 +1,40 @@
+@media only screen and (max-width: 620px) {
+    .name{
+        font-size: 70;
+    }
+    .description {
+        font-size: 30;
+    }
+    .title_container_about{
+        font-size: 70;
+    }
+    .about_content {
+        font-size: x-large;
+    }
+    .title_container{
+        font-size: 70;
+    }
+    .project_contents{
+        flex-direction: column;
+    }
+    .project_text {
+        width: 90%;
+    }
+    .project_details {
+        width: 90%;
+    }
+    .contact_container{
+        font-size: large;
+        padding: 5px;
+    }
+    .name_contact{
+        font-size: large;
+        margin: auto 5px auto auto;
+    }
+    .year_contact{
+        font-size: large;
+    }
+    .chevrons {
+        margin: auto 5vw 5vh 10px;
+    }
+}

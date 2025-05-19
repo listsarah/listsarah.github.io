@@ -114,6 +114,7 @@ img{
     position: relative;
     overflow: hidden;
     padding: 5px;
+    background-color: var(--black);
 }
 
 .image_container img,

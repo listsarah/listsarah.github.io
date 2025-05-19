@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, abort
 from app.main import main_blueprint as bp_main
 import json
 
@@ -20,7 +20,7 @@ def project_details(name):
     projects = d
     for project in projects:
         if name_snake_case(project["title"]) == name: return render_template("__project.html")
-    return {500: "project not found"}
+    return abort(404)
 
 @bp_main.route("/projects/<name>/retrieve")
 def get_project_details(name):
@@ -29,7 +29,7 @@ def get_project_details(name):
     projects = d
     for project in projects:
         if name_snake_case(project["title"]) == name: return {"project": project}
-    return {500: "project not found"}
+    return abort(404)
 
 def name_snake_case(name):
     words = name.split(" ")

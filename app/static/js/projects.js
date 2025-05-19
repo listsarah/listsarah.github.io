@@ -191,5 +191,5 @@ function remove_filter(filter_name){
 
 document.addEventListener("DOMContentLoaded", add_filters)
 document.getElementById("filter_container").addEventListener("mouseover", () => toggle_dropdown(true))
-document.getElementById("filter_container").addEventListener("click", () => toggle_dropdown(false))
+document.getElementById("filter_container").addEventListener("click", () => toggle_dropdown(true))
 document.addEventListener('click', function(event) {if (!document.getElementById("filter_container").contains(event.target)) {toggle_dropdown(false)}});
