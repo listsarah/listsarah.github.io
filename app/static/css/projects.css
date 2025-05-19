@@ -96,6 +96,7 @@
     display: flex;
     gap: 5px;
     min-width: 150px;
+    cursor: pointer;
 }
 
 .skill_dropdown{

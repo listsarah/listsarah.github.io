@@ -71,11 +71,14 @@ img{
 }
 
 .navigate_btn{
-    margin: auto 10 auto 10;
     padding: 10px;
     font-size: xx-large;
-    transform: scale(2,3);
-    font-weight: lighter;
+    font-weight: bolder;
+    color: var(--black);
+    position: absolute;
+    background-color: var(--white);
+    margin: auto 0 auto 90%;
+    border: 3px solid var(--black);
 }
 
 @keyframes jumpInfinite {
@@ -110,7 +113,6 @@ img{
     align-items: center;
     position: relative;
     overflow: hidden;
-    background: var(--black);
     padding: 5px;
 }
 
