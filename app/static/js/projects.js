@@ -99,7 +99,7 @@ function add_project(project){
     const skill_box = document.createElement("div");
     skill_box.classList = "skill_box"
     
-    project["skills"].forEach(skill => {
+    project["skills"].sort().forEach(skill => {
         const skill_div = document.createElement("div");
         skill_div.classList = "skill"
         skill_div.innerText = skill.toUpperCase()
