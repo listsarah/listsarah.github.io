@@ -4,6 +4,7 @@ html{
 
 body{
     margin: 0;
+    background: var(--black);
 }
 
 .header_container{
@@ -27,5 +28,10 @@ body{
 .logo_img{
     height: 4.5vh;
     margin: auto auto auto 10px;
-    cursor: pointer;
+}
+.error_code{
+    font-size: 100;
+}
+.not_found{
+    font-size: large;
 }
