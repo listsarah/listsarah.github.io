@@ -53,11 +53,13 @@ function refresh_projects(){
     remove_all_projects()
     project_data.forEach(project => {
         if(filters.length !== 0){
-            project["skills"].forEach(skill => {
+            for (let i = 0; i < project["skills"].length; i++){
+                skill = project["skills"][i]
                 if(filters.includes(skill.toUpperCase())){
                     add_project(project)
+                    break
                 }
-            })
+            }
         } else add_project(project)
     });
 }
