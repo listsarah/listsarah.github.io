@@ -1,14 +1,27 @@
 project_data = ""
 picture_index = 0
 
+function project_snake_case(title){
+    title = title.split(" ")
+    snake_case_title = ""
+    title.forEach(word => {
+        snake_case_title += "_" + word.toLowerCase()
+    })
+    return snake_case_title.substring(1);
+}
+
 async function get_project(){
-    const url = window.location.href + "/retrieve";
+    const url = "projects.json";
     const response = await fetch(url);
     if(!response.ok){
         throw new Error(`Response status: ${response.status}`);
     }
     const json = await response.json();
-    project_data = json["project"]
+    const url_params = new URLSearchParams(window.location.search);
+    const param_value = url_params.get('project');
+    console.log(json)
+    console.log(param_value)
+    project_data = json.find(d => project_snake_case(d.title) == param_value)
     update_text()
 }
 

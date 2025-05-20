@@ -1,13 +1,13 @@
 project_data = ""
 
 async function get_projects(){
-    const url = `/projects/retreive`;
+    const url = `projects.json`;
     const response = await fetch(url);
     if(!response.ok){
         throw new Error(`Response status: ${response.status}`);
     }
     const json = await response.json();
-    projects = json["projects"]
+    projects = json
     projects.sort((a, b) => -1*completion_date_to_decimal(a["completion_date"]) + completion_date_to_decimal(b["completion_date"]));
     project_data = projects
     projects.forEach(project => {
@@ -17,7 +17,7 @@ async function get_projects(){
 
 function completion_date_to_decimal(date){
     elements = date.split(" ")
-    months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     return months.indexOf(elements[0]) / 12 + parseFloat(elements[1])
 }
 
@@ -53,11 +53,13 @@ function refresh_projects(){
     remove_all_projects()
     project_data.forEach(project => {
         if(filters.length !== 0){
-            project["skills"].forEach(skill => {
+            for (let i = 0; i < project["skills"].length; i++){
+                skill = project["skills"][i]
                 if(filters.includes(skill.toUpperCase())){
                     add_project(project)
+                    break
                 }
-            })
+            }
         } else add_project(project)
     });
 }
@@ -126,9 +128,9 @@ function add_project(project){
     learn_more_arrows.innerText = ">>"
 
     learn_more_arrows.addEventListener("click", () => {
-        console.log("/projects/" + project_snake_case(project["title"]))
-        window.location.href = "/projects/" + project_snake_case(project["title"])
-    })
+        window.location.href = `project.html?project=${project_snake_case(project["title"])}`;
+    });
+    
 
     learn_more_container.appendChild(learn_more_text)
     learn_more_container.appendChild(learn_more_arrows)
