@@ -43,4 +43,5 @@ img{
 }
 .contact_container a{
     margin: auto;
+    max-height: 24px;
 }
