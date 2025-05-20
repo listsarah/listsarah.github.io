@@ -14,8 +14,4 @@ def create_app(config_class=Config):
     errors.template_folder = Config.TEMPLATE_FOLDER_ERRORS
     app.register_blueprint(errors)   
 
-    from app.admin import admin_blueprint as admin
-    admin.template_folder = Config.TEMPLATE_FOLDER_ADMIN
-    app.register_blueprint(admin)  
-
     return app
