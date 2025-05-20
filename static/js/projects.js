@@ -1,13 +1,13 @@
 project_data = ""
 
 async function get_projects(){
-    const url = `/projects/retreive`;
+    const url = `projects.json`;
     const response = await fetch(url);
     if(!response.ok){
         throw new Error(`Response status: ${response.status}`);
     }
     const json = await response.json();
-    projects = json["projects"]
+    projects = json
     projects.sort((a, b) => -1*completion_date_to_decimal(a["completion_date"]) + completion_date_to_decimal(b["completion_date"]));
     project_data = projects
     projects.forEach(project => {
