@@ -17,7 +17,7 @@ async function get_projects(){
 
 function completion_date_to_decimal(date){
     elements = date.split(" ")
-    months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     return months.indexOf(elements[0]) / 12 + parseFloat(elements[1])
 }
 
@@ -126,9 +126,9 @@ function add_project(project){
     learn_more_arrows.innerText = ">>"
 
     learn_more_arrows.addEventListener("click", () => {
-        console.log("/projects/" + project_snake_case(project["title"]))
-        window.location.href = "/projects/" + project_snake_case(project["title"])
-    })
+        window.location.href = `project.html?project=${project_snake_case(project["title"])}`;
+    });
+    
 
     learn_more_container.appendChild(learn_more_text)
     learn_more_container.appendChild(learn_more_arrows)
